@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { AngularMaterialModule } from './material/material.module';
 import { TempComponent } from './temp/temp.component';
 import { LedComponent } from './led/led.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, TempComponent, LedComponent],
@@ -17,6 +18,7 @@ import { LedComponent } from './led/led.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

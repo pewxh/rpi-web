@@ -11,7 +11,9 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="temp">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>TEMPERATURE</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        TEMPERATURE (deg C)
+      </th>
       <td mat-cell *matCellDef="let element">{{ element.temp }}</td>
     </ng-container>
 

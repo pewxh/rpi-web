@@ -15,7 +15,7 @@ export class TempComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   ELEMENT_DATA: DataSET[] = [];
-  displayedColumns: string[] = ['temp', 'time'];
+  displayedColumns: string[] = ['time', 'temp'];
   dataSource = new MatTableDataSource<DataSET>(this.ELEMENT_DATA);
   constructor(private service: TempApiCallService) {}
 

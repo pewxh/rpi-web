@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { TempApiCallService } from '../temp-api-call.service';
-import { DataSET } from '../tempDataSet';
+import { PinCallService } from '../pin-call.service';
+import { pinState } from '../pinData';
 
 @Component({
   selector: 'app-led',
@@ -14,10 +14,10 @@ import { DataSET } from '../tempDataSet';
 export class LedComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  ELEMENT_DATA: DataSET[] = [];
-  displayedColumns: string[] = ['temp', 'time'];
-  dataSource = new MatTableDataSource<DataSET>(this.ELEMENT_DATA);
-  constructor(private service: TempApiCallService) {}
+  ELEMENT_DATA: pinState[] = [];
+  displayedColumns: string[] = ['id', 'pin', 'clr', 'state'];
+  dataSource = new MatTableDataSource<pinState>(this.ELEMENT_DATA);
+  constructor(private service: PinCallService) {}
 
   ngOnInit(): void {
     this.getDataCall();
@@ -28,7 +28,7 @@ export class LedComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   public getDataCall() {
-    let resp = this.service.getDataDB();
-    resp.subscribe((temp) => (this.dataSource.data = temp as DataSET[]));
+    let resp = this.service.getState();
+    resp.subscribe((pin) => (this.dataSource.data = pin as pinState[]));
   }
 }

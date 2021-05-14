@@ -35,8 +35,44 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="container">
-      <app-temp></app-temp>
-      <!-- <app-led></app-led> -->
+      <mat-accordion>
+        <!-- <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>  </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel> -->
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>wb_sunny</mat-icon> ROOM TEMPERATURE
+            </mat-panel-title>
+            <mat-panel-description>
+              <!-- Currently I am {{ panelOpenState ? "open" : "closed" }} -->
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-temp></app-temp>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion multi>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>details</mat-icon>GENERAL PURPOSE INPUT OUTPUT
+              PINS</mat-panel-title
+            >
+            <mat-panel-description>
+              <!-- Currently I am {{ panelOpenState ? "open" : "closed" }} -->
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <app-led></app-led>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,5 +1,11 @@
 .container {
-  height: 10em;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
 }

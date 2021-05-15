@@ -14,13 +14,32 @@ import { pinState } from '../pinData';
 export class LedComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  ELEMENT_DATA: pinState[] = [];
+  ELEMENT_DATA: pinState[] = [
+    {
+      id: 1,
+      pin_num: 18,
+      color: 'red',
+      state: 'off',
+    },
+    {
+      id: 2,
+      pin_num: 17,
+      color: 'green',
+      state: 'off',
+    },
+    {
+      id: 3,
+      pin_num: 27,
+      color: 'blue',
+      state: 'off',
+    },
+  ];
   displayedColumns: string[] = ['id', 'pin', 'clr', 'state'];
   dataSource = new MatTableDataSource<pinState>(this.ELEMENT_DATA);
   constructor(private service: PinCallService) {}
 
   ngOnInit(): void {
-    this.getDataCall();
+    // this.getDataCall();
     this.dataSource.paginator = this.paginator;
   }
   ngAfterViewInit() {

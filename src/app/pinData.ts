@@ -1,5 +1,5 @@
 export interface pinState {
-  id: string;
+  id: number;
   pin_num: number;
   color: string;
   state: string;

@@ -11,5 +11,13 @@ export class CardComponent implements OnInit {
   @Input() pinDesc: string;
   @Input() pinNum: string;
   @Input() pinId: string;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let card = document.getElementsByClassName(
+      'content'
+    ) as HTMLCollectionOf<HTMLElement>;
+
+    if (this.pinState == 'ON') {
+      card[0].style.opacity = '1';
+    }
+  }
 }

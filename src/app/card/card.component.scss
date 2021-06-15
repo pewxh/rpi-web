@@ -116,32 +116,3 @@ section::after {
   font-weight: 300;
   text-transform: initial;
 }
-
-.card .sci {
-  position: absolute;
-  bottom: 35px;
-  display: flex;
-}
-
-ul {
-  padding-inline-start: 0px;
-}
-.card .sci li {
-  opacity: 0;
-  padding: 0 20px;
-  align-content: center;
-  list-style: none;
-  transform: translateY(40px);
-  transition: 0.7s;
-  transition-delay: calc(0.1s * var(--i));
-}
-
-.card:hover .sci li {
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.card .sci li a {
-  color: white;
-  font-size: 24px;
-}

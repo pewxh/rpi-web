@@ -7,18 +7,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { LayoutModule } from '@angular/cdk/layout';
 import { AngularMaterialModule } from './material/material.module';
-import { LedComponent } from './led/led.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './card/card.component';
 import { from } from 'rxjs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LedComponent,
-    CardHolderComponent,
-    CardComponent,
-  ],
+  declarations: [AppComponent, CardHolderComponent, CardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

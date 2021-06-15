@@ -15,19 +15,18 @@ export class CardComponent implements OnInit {
   toggle(): void {
     if (this.pinState === 'ON') this.pinState = 'OFF';
     else this.pinState = 'ON';
-    this.opacity();
   }
 
-  opacity(): void {
-    let card = document.getElementsByClassName(
-      'content'
-    ) as HTMLCollectionOf<HTMLElement>;
-    // if (this.pinState != 'OFF') {
-    //   card[0].style.opacity = '1';
-    // }
-  }
+  // opacity(): void {
+  //   let card = document.getElementsByClassName(
+  //     'content'
+  //   ) as HTMLCollectionOf<HTMLElement>;
+  //   // if (this.pinState != 'OFF') {
+  //   //   card[0].style.opacity = '1';
+  //   // }
+  // }
 
   ngOnInit(): void {
-    this.opacity();
+    // this.opacity();
   }
 }

@@ -1,0 +1,49 @@
+<body>
+  <form (submit)="addPin()">
+    <div class="card" (click)="toggle()">
+      <div class="content trans">
+        <div class="imgBx">+</div>
+        <div class="contentBx">
+          <h3 class="nm" *ngIf="!isHidden">
+            <!-- <mat-form-field>Pin Number <br /></mat-form-field> --><mat-form-field>
+              <input
+                matInput
+                rows="1"
+                name="pin_num"
+                [(ngModel)]="pin_num"
+                type="number"
+                placeholder="Pin Number"
+              />
+              <!-- <mat-error *ngIf="title.invalid">{{
+                "Please add a title"
+              }}</mat-error> -->
+            </mat-form-field>
+
+            <mat-form-field>
+              <textarea
+                matInput
+                rows="1"
+                name="color"
+                [(ngModel)]="color"
+                placeholder="Add Description of the pin."
+              ></textarea>
+              <!-- <mat-error *ngIf="content.invalid">{{
+                "Please add some content. "
+              }}</mat-error> -->
+            </mat-form-field>
+            <!-- <br />
+            <span>{{ color }}</span> -->
+          </h3>
+          <button
+            mat-raised-button
+            color="black"
+            type="submit"
+            *ngIf="!isHidden"
+          >
+            Add Pin
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

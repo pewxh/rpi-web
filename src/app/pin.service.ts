@@ -34,15 +34,22 @@ export class PinService {
         this.pinUpdated.next([...this.pins]);
       });
   }
-  addPin(pin_num: number, state: string, color: string) {
-    const pin: Pin = {
-      id: 0, //will be updated automatically
+  addPin(pin_num: number, color: string) {
+    // const pin: Pin = {
+    //   id: 0, //will be updated automatically
+    //   pin_num: pin_num,
+    //   state: state,
+    //   color: color,
+    // };
+    let pin = {
       pin_num: pin_num,
-      state: state,
       color: color,
+      state: 'on',
+      id: 0,
     };
+
     this.http
-      .post<{ message: string; postId: string }>(this.url + 'pins', pin)
+      .post<{ message: string; postId: string }>(this.url, pin)
       .subscribe((resp) => {
         // pin.id = resp.postId;
         // console.log(resp.postId);

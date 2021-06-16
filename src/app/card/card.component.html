@@ -1,6 +1,8 @@
 <body>
   <div class="card" (click)="toggle()">
     <div class="content" *ngIf="pin.state === 'on'">
+      <div class="onlinerow"><div class="online"></div></div>
+
       <div class="imgBx">
         {{ pin.id }}
       </div>

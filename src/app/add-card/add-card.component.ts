@@ -10,14 +10,15 @@ import { PinService } from '../pin.service';
 })
 export class AddCardComponent implements OnInit {
   constructor(private pinService: PinService) {}
-  isHidden: boolean = false;
+  isHidden: boolean = true;
   pin_num: number;
-  color: string;
+  color: string = '';
 
   ngOnInit(): void {
     // this.opacity();
   }
   addPin() {
+    this.isHidden = true;
     this.pinService.addPin(this.pin_num, this.color);
   }
   toggle() {

@@ -14,8 +14,8 @@
                 type="number"
                 placeholder="Pin Number"
               />
-              <!-- <mat-error *ngIf="title.invalid">{{
-                "Please add a title"
+              <!-- <mat-error *ngIf="pin_num.invalid">{{
+                "Please add a valid pin"
               }}</mat-error> -->
             </mat-form-field>
 
@@ -34,14 +34,11 @@
             <!-- <br />
             <span>{{ color }}</span> -->
           </h3>
-          <button
-            mat-raised-button
-            color="black"
-            type="submit"
-            *ngIf="!isHidden"
-          >
-            Add Pin
-          </button>
+          <div class="btnrow">
+            <button mat-mini-fab color="black" type="submit" *ngIf="!isHidden">
+              <mat-icon>add_circle</mat-icon>
+            </button>
+          </div>
         </div>
       </div>
     </div>

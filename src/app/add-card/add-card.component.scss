@@ -126,3 +126,9 @@ section::after {
   font-weight: 300;
   text-transform: initial;
 }
+
+.btnrow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -19,7 +19,8 @@ export class AddCardComponent implements OnInit {
   }
   addPin() {
     this.isHidden = true;
-    this.pinService.addPin(this.pin_num, this.color);
+    if (this.pin_num > 0 && this.pin_num < 30)
+      this.pinService.addPin(this.pin_num, this.color);
   }
   toggle() {
     this.isHidden = false;

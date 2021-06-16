@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class PinService {
+  private id: number = 4;
   constructor(private http: HttpClient, private router: Router) {}
   private pins: Pin[] = [];
   private url: string = 'http://192.168.1.18:5000/pins/';
@@ -45,7 +46,7 @@ export class PinService {
       pin_num: pin_num,
       color: color,
       state: 'on',
-      id: 0,
+      id: this.id++,
     };
 
     this.http

@@ -62,8 +62,8 @@ export class PinService {
     return this.pinUpdated.asObservable();
   }
 
-  deletePost(id: number) {
-    this.http.delete(this.url + id.toString).subscribe(() => {
+  deletePin(id: number) {
+    this.http.delete(this.url + id).subscribe(() => {
       const updatedPins = this.pins.filter((pins) => pins.id !== id);
       this.pins = updatedPins;
       this.pinUpdated.next([...this.pins]);

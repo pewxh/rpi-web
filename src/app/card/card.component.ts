@@ -33,7 +33,9 @@ export class CardComponent implements OnInit {
   //   //   card[0].style.opacity = '1';
   //   // }
   // }
-
+  onDelete() {
+    this.pinService.deletePin(this.pin.id);
+  }
   ngOnInit(): void {
     // this.opacity();
   }

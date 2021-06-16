@@ -1,26 +1,26 @@
 <body>
   <div class="card" (click)="toggle()">
-    <div class="content" *ngIf="pinState === 'ON'">
+    <div class="content" *ngIf="pin.state === 'on'">
       <div class="imgBx">
-        {{ pinId }}
+        {{ pin.id }}
       </div>
       <div class="contentBx">
         <h3 class="nm">
-          Pin Number : {{ pinNum }} <br />
-          Pin State : {{ pinState }} <br />
-          <span>{{ pinDesc }}</span>
+          Pin Number : {{ pin.pin_num }} <br />
+          Pin State : {{ pin.state }} <br />
+          <span>{{ pin.color }}</span>
         </h3>
       </div>
     </div>
-    <div class="content trans" *ngIf="pinState === 'OFF'">
+    <div class="content trans" *ngIf="pin.state === 'off'">
       <div class="imgBx">
-        {{ pinId }}
+        {{ pin.id }}
       </div>
       <div class="contentBx">
         <h3 class="nm">
-          Pin Number : {{ pinNum }} <br />
-          Pin State : {{ pinState }} <br />
-          <span>{{ pinDesc }}</span>
+          Pin Number : {{ pin.pin_num }} <br />
+          Pin State : {{ pin.state }} <br />
+          <span>{{ pin.color }}</span>
         </h3>
       </div>
     </div>

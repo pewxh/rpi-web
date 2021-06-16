@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Pin } from '../pin.model';
+import { PinService } from '../pin.service';
 
 @Component({
   selector: 'app-card',
@@ -6,15 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  constructor() {}
-  @Input() pinState: string;
-  @Input() pinDesc: string;
-  @Input() pinNum: string;
-  @Input() pinId: string;
-
+  constructor(private pinService: PinService) {}
+  // @Input() pinState: string;
+  // @Input() pinDesc: string;
+  // @Input() pinNum: string;
+  // @Input() pinId: string;
+  @Input() pin: Pin;
   toggle(): void {
-    if (this.pinState === 'ON') this.pinState = 'OFF';
-    else this.pinState = 'ON';
+    if (this.pin.state === 'on') this.pin.state = 'off';
+    else this.pin.state = 'on';
+    this.pinService.updatePin(
+      this.pin.id,
+      this.pin.pin_num,
+      this.pin.state,
+      this.pin.color
+    );
   }
 
   // opacity(): void {

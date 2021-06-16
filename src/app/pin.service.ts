@@ -12,7 +12,7 @@ export class PinService {
   private id: number = 4;
   constructor(private http: HttpClient, private router: Router) {}
   private pins: Pin[] = [];
-  private url: string = 'http://192.168.1.18:5000/pins/';
+  private url: string = 'http://localhost:5000/pins/';
   private pinUpdated = new Subject<Pin[]>();
 
   getPins() {
